@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Lightbox -->
+    <link href="css/lightbox.css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Javascript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/MenuFunctions.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            // On load
+            $(".3dCompC").hide();
+            $(".cineC").hide();
+            $(".gamesC").hide();
+            $("#archC").hide();
+            $("#tRC").hide();
+            $(".3dCompC").removeClass("hide");
+            $(".cineC").removeClass("hide");
+            $(".gamesC").removeClass("hide");
+            $(".photoC").removeClass("hide");
+            $("#photoB").addClass("wActive");
+            $("#dTB").addClass("wPActive");
+            
+            // CATEGORY MENU
+            
+            // Active button reset when clicking on category button.
+            $(".wButton").click(function () {
+                $(".wButton").removeClass('wActive');
+                $(".wPButton").removeClass("wPActive");
+                $(".wColumn").children().hide();
+            });
+            
+            // Photo Gallery 
+            $("#photoB").click(function () {
+                
+                // Hide every other category.
+                $(".3dCompC").hide();
+                $(".cineC").hide();
+                $(".gamesC").hide();
+                
+                //Show Photo Gallery and Dry Thoughts.
+                $(".photoC").show();
+                $("#dTC").show();
+    
+                
+                // Mark buttons as active.
+                $("#photoB").addClass('wActive');
+                $("#dTB").addClass("wPActive");
+                
+            });
+            
+            // 3D Compositions
+            $("#dCompB").click(function () {
+                
+                // Hide every other category.
+                $(".photoC").hide();
+                $(".cineC").hide();
+                $(".gamesC").hide();
+                
+                // Show 3D Compositions and Van.
+                $(".3dCompC").show();
+                $("#vanC").show();
+                
+                // Mark buttons as active.
+                $("#dCompB").addClass("wActive");
+                $("#vanB").addClass("wPActive");
+            });
+            
+            // Cinematography
+            $("#cineB").click(function () {
+                
+                // Hide every other category.
+                $(".photoC").hide();
+                $(".3dCompC").hide();
+                $(".gamesC").hide();
+                
+                // Show Cinematography and Life Will Smile.
+                $(".cineC").show();
+                $("#lWSC").show();
+                
+                // Mark buttons as active.
+                $("#cineB").addClass('wActive');
+                $("#lWSB").addClass("wPActive");
+            });
+            
+            // Games
+            $("#gamesB").click(function () {
+                
+                // Hide every other category.
+                $(".photoC").hide();
+                $(".3dCompC").hide();
+                $(".cineC").hide();
+                
+                // Show Games and Cannon Ball.
+                $(".gamesC").show();
+                $("#cBC").show();
+                
+                // Mark buttons as active.
+                $("#gamesB").addClass('wActive');
+                $("#cBB").addClass("wPActive");
+            });
+            
+            // PROJECT MENU
+            
+            // Active button reset when clicking on project button. 
+            $(".wPButton").click(function () {
+                $(".wPButton").removeClass("wPActive");
+                $(".wColumn").children().hide();
+            });
+            
+            // Architecture button
+            $("#archB").click(function () {
+                $("#archC").show();
+                $("#archB").addClass("wPActive");
+            });
+            $("#dTB").click(function () {
+                $("#dTC").show();
+                $("#dTB").addClass("wPActive");
+            });
+            $("#vanB").click(function () {
+                $("#vanC").show();
+                $("#vanB").addClass("wPActive");
+            });
+            $("#sPUB").click(function () {
+                $("#sPUC").show();
+                $("#sPUB").addClass("wPActive");
+            });
+            $("#lWSB").click(function () {
+                $("#lWSC").show();
+                $("#lWSB").addClass("wPActive");
+            });
+            $("#cBB").click(function () {
+                $("#cBC").show();
+                $("#cBB").addClass("wPActive");
+            });
+
+            function doClick(e) {}
+        });
+    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Stylesheet link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicons -->
+    <link rel="icon" href="img/favicon.ico">
+    <title>Michail Skalistiris Pikis</title>
+</head>
+
+<body>
+    <div id="frame">
+        <div id="contentW">
+            <div id="wHead">
+                <h1 class="photoC hide">Photo Gallery</h1>
+                <h1 class="3dCompC hide">3D Compositions</h1>
+                <h1 class="cineC hide">Cinematography</h1>
+                <h1 class="gamesC hide">Games</h1> </div>
+            <!-- Projects -->
+            <div id="projects">
+                <div class="photoC hide">
+                    <button id="dTB" class="wPButton">Dry Thoughts</button>
+                    <button id="archB" class="wPButton">Architecture</button>
+                    
+                </div>
+                <div class="3dCompC hide">
+                    <button id="vanB" class="wPButton">Wolkswagen Type 2</button>
+                    <button id="sPUB" class="wPButton">Solar Powered Umbrella</button>
+                </div>
+                <div class="cineC hide">
+                    <button id="lWSB" class="wPButton">Life Will Smile (BTS)</button>
+                </div>
+                <div class="gamesC hide">
+                    <button id="cBB" class="wPButton">Cannon Ball</button>
+                </div>
+            </div>
+            <!-- Main Content -->
+            <div id="mainInfo">
+                <div class="photoC wColumn hide">
+                    <!-- Dry Thoughts -->
+                    <div id="dTC">
+                        <div class="wText">
+                            <p>Wondering under the burning sun
+                                <br> shapes and illusions crafted by hand
+                                <br> started appearing in the rippling sand. </p>
+                        </div>
+                        <div class="wRow">
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt1.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/10 | S: 1/80"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt1.png" class="img-responsive" alt="Dry Thoughts Image 1"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt2.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/6.3 | S: 1/640"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt2.png" class="img-responsive" alt="Dry Thoughts Image 2"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt3.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/18 | S: 1/60"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt3.png" class="img-responsive" alt="Dry Thoughts 3"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt4.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/16 | S: 1/60"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt4.png" class="img-responsive" alt="Dry Thoughts Image 4"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt5.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/14 | S: 1/125"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt5.png" class="img-responsive" alt="Dry Thoughts Image 5"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt6.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/8 | S: 1/1000"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt6.png" class="img-responsive" alt="Dry Thoughts Image 6"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt7.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/18 | S: 1/60"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt7.png" class="img-responsive" alt="Going To Image 7"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/DryThoughts/gt8.png" data-lightbox="dTC" title="Camera: Nikon D60 | A: f/9 | S: 1/400"> <img src="img/Work/PhotoGallery/DryThoughts/thumbgt8.png" class="img-responsive" alt="Dry Thoughts Image 8"> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Architecture -->
+                    <div id="archC">
+                        <div class="wText">
+                            <p>Architectural photography is one of my favourite means to express my visions. My work, is a sequence of exterior designs, photographed in formalistic manner.</p>
+                        </div>
+                        <div class="wRow">
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch3.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/9 | S: 1/250"> <img src="img/Work/PhotoGallery/Architecture/thumbarch3.png" class="img-responsive" alt="Architecture Image 3"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch5.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/20 | S: 1/25"> <img src="img/Work/PhotoGallery/Architecture/thumbarch5.png" class="img-responsive" alt="Architecture Image 5"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch6.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/8 | S: 1/1,250"> <img src="img/Work/PhotoGallery/Architecture/thumbarch6.png" class="img-responsive" alt="Architecture Image 6"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch1.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/7.1 | S: 1/400"> <img src="img/Work/PhotoGallery/Architecture/thumbarch1.png" class="img-responsive" alt="Architecture Image 1"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch2.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/4 | S: 1/10"> <img src="img/Work/PhotoGallery/Architecture/thumbarch2.png" class="img-responsive" alt="Architecture Image 2"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/PhotoGallery/Architecture/arch4.png" data-lightbox="archC" title="Camera: Nikon D60 | A: f/8 | S: 1/640"> <img src="img/Work/PhotoGallery/Architecture/thumbarch4.png" class="img-responsive" alt="Architecture Image 4"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="3dCompC wColumn hide">
+                    <!-- Volkswagen Type 2 -->
+                    <div id="vanC">
+                        <div class="wText">
+                            <p><u>Software:</u> Maya Autodesk
+                                <br>
+                                <br> This van model was my first 3D composition I ever created. It is based on the Volkswagen Type 2 Van that was introduced in 1950. The designing process was accomplished through the use of Maya Autodesk software while being guided by blueprints of the original design.</p>
+                        </div>
+                        <div class="wFull">
+                            <iframe src="https://www.youtube.com/embed/KL63pvTQKEs" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                    </div>
+                    <!-- Solar Powered Umbrella -->
+                    <div id="sPUC">
+                        <div class="wText">
+                            <p><u>Software:</u> Maya Autodesk
+                                <br>
+                                <br> The Solar Powered Umbrella is a project of my own conception and design. It is a 3D illustrated idea for parks that has the ability to transform sunlight into electrical energy with the help of solar panels. In order to increase electricity production, the umbrella tilts towards the sun to capture as much solar energy as possible during the day. Produced electricity is used to charge bicycles and other electronic devices. Additionally, the umbrella has spotlights that provide the necessary brightness when the light is low.</p>
+                        </div>
+                        <div class="wRow">
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/3DComp/SollarPoweredUmbrella/Umbrela.png" data-lightbox="sPUGallery" title="Software: Maya Autodesk | Renderer: Arnold"> <img src="img/Work/3DComp/SollarPoweredUmbrella/Umbrelathumb.png" alt="Cannon Ball Start"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/3DComp/SollarPoweredUmbrella/Umbrela2.png" data-lightbox="sPUGallery" title="Software: Maya Autodesk | Renderer: Arnold"> <img src="img/Work/3DComp/SollarPoweredUmbrella/Umbrela2thumb.png" alt="Cannon Ball Start"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/3DComp/SollarPoweredUmbrella/Umbrela3.png" data-lightbox="sPUGallery" title="Software: Maya Autodesk | Renderer: Arnold"> <img src="img/Work/3DComp/SollarPoweredUmbrella/Umbrela3thumb.png" alt="Cannon Ball Start"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/3DComp/SollarPoweredUmbrella/Umbrela4.png" data-lightbox="sPUGallery" title="Software: Maya Autodesk | Renderer: Arnold"> <img src="img/Work/3DComp/SollarPoweredUmbrella/Umbrela4thumb.png" alt="Cannon Ball Start"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cineC wColumn hide">
+                    <!-- Life Will Smile -->
+                    <div id="lWSC">
+                        <div class="wText">
+                            <h4>Theme:</h4>
+                            <br>
+                            <p> During World War II, on the small Greek island of Zakynthos, every member of the Jewish community survived from the Germans unscratched. A unique occurrence in the chronicles of modern European history and one of the greatest untold stories of Greek bravery and courage.</p>
+                            <br>
+                            <h4>The documentary:</h4>
+                            <br>
+                            <p><u>Producer:</u> Steven Priovolos, Nomadic Films, TerraMagma
+                                <br> <u>Director:</u> Drey Kleanthous
+                                <br> <u>Under the auspices of:</u> UNESCO, Greek-America Foundation
+                                <br>
+                                <br> “Life Will Smile” is a 40-minute documentary of the events that took place at Zakynthos in 1943. The film is exclusively narrated by one of the last remaining survivors, 84-year old Haim Konstantini. Just 10 years old, in 1943, Haim tells the story through the veiled innocence of childhood.</p>
+                            <br>
+                            <h4>My role:</h4>
+                            <br>
+                            <p>Working as a camera operator for the Behind The Scenes of “Life Will Smile” documentary gave me the unique opportunity to be a part of a large-scale production. Except of improving my cinematography skills, I had the chance to observe, from the inside, the operation of a professional filming team. </p>
+                        </div>
+                        <div class="wFull">
+                            <iframe src="https://www.youtube.com/embed/9QSDdVuAeUA" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <div class="wRow">
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS1.png" data-lightbox="lWSC" title="Camera: Nikon D810 | A: f/1.6 | S: 1/160"> <img src="img/Work/Cine/BTS1thumb.png" alt="Life Will Smile Image 1"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS2.png" data-lightbox="lWSC" title="Camera: Nikon D750 | A: f/5.6 | S: 1/100"> <img src="img/Work/Cine/BTS2thumb.png" alt="Life Will Smile Image 2"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS3.png" data-lightbox="lWSC" title="Camera: Nikon D750 | A: f/8 | S: 1/60"> <img src="img/Work/Cine/BTS3thumb.png" alt="Life Will Smile Image 3"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS4.png" data-lightbox="lWSC" title="Camera: Nikon D750 | A: f/4.5 | S: 1/1600"> <img src="img/Work/Cine/BTS4thumb.png" alt="Life Will Smile Image 4"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS5.png" data-lightbox="lWSC" title="Camera: Nikon D810 | A: f/3.2 | S: 1/400"> <img src="img/Work/Cine/BTS5thumb.png" alt="Life Will Smile Image 5"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS6.png" data-lightbox="lWSC" title="Camera: Nikon D810 | A: f/4.5 | S: 1/500"> <img src="img/Work/Cine/BTS6thumb.png" alt="Life Will Smile Image 6"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS7.png" data-lightbox="lWSC"> <img src="img/Work/Cine/BTS7thumb.png" alt="Life Will Smile Image 7" title="Camera: Nikon D810 | A: f/4 | S: 1/160"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/BTS8.png" data-lightbox="lWSC"> <img src="img/Work/Cine/BTS8thumb.png" alt="Life Will Smile Image 8" title="Camera: Nikon D810 | A: f/5 | S: 1/160"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Cine/Certificate.png" data-lightbox="lWSC"> <img src="img/Work/Cine/Certificatethumb.png" alt="Life Will Smile Participation Certificate"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gamesC wColumn hide">
+                    <!-- Cannon Ball -->
+                    <div id="cBC">
+                        <div class="wText">
+                            <h4>User Friendly:</h4>
+                            <br>
+                            <p>The simplistic interface of the game, provides the user with a smooth gaming experience of simple choices, without the lack of adrenaline.</p>
+                            <br>
+                            <h4>Interactive:</h4>
+                            <p>
+                                <br> Using leap motion, the game acquires a whole new dimension of user and computer interaction. The player is able to rotate the cannon and shoot balls with simple hand gestures.</p>
+                            <br>
+                            <h4>Addictive:</h4>
+                            <br>
+                            <p>By their very nature, tower defence games have the ability to absorb the player until they complete every single challenge. In combination with eye catching graphics the results are intense. </p>
+                        </div>
+                        <div class="wRow">
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Games/CBStart.png" data-lightbox="cBG"> <img src="img/Work/Games/CBStart-thumb.png" class="img-responsive" alt="Cannon Ball Start"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Games/CBGame.png" data-lightbox="cBG"> <img src="img/Work/Games/CBGame-thumb.png" class="img-responsive" alt="Cannon Ball Game"> </a>
+                            </div>
+                            <div class="thumbnail col-lg-4 col-md-6 col-sm-12">
+                                <a href="img/Work/Games/CBGameOver.png" data-lightbox="cBG"> <img src="img/Work/Games/CBGameOver-thumb.png" class="img-responsive" alt="Cannon Ball Game Over"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+            <!-- Work Navigation -->
+            <div id=wMenu>
+                <button id="photoB" class="wButton"><img src="img/Work/PhotoGalleryIcon.png" alt="Photo Gallery Icon"></button>
+                <button id="dCompB" class="wButton"><img src="img/Work/3DCompositionsIcon.png" alt="3D Composition Icon"></button>
+                <button id="cineB" class="wButton"><img src="img/Work/CinematographyIcon.png" alt="Cinematography Icon"></button>
+                <button id="gamesB" class="wButton"><img src="img/Work/GamesIcon.png" alt="Games Icon"></button>
+            </div>
+            <!--  -->
+        </div>
+    </div>
+    <div class="dMenu">
+        <div class="dMContainer"> <a id="back" href="index.html">←</a>
+            <div class="mPages">
+                <ul id="line1">
+                    <li><a href="Myself.html">MySelf</a></li><li>
+                        <h3>|</h3> </li><li><a href="Skills.html">Skills<br></a></li>
+                </ul>
+                <h3 class="mHide">|</h3>
+                <ul id="line2">
+                    <li><a class="active" href="Work.html">Work</a></li><li>
+                        <h3>|</h3> </li><li><a href="Connect.html">Connect</a></li>
+                </ul>
+            </div>
+            <button id="sym">[ ]</button>
+        </div>
+        <button id="arrow">⥣</button>
+    </div>
+    <script src="js/lightbox.js"></script>
+    
+</body>
+
+</html>

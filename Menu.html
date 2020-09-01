@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Other meta tags -->
+    <meta name="description" content="Portfolio	of works">
+    <meta name="keywords" content="EDA,	Digital Portfolio,	digital	media, Kent">
+    <meta name="author" content="Michail Skalistiris Pikis">
+    <!-- Javascript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/MenuFunctions.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            // On load
+            $("#valve").mouseover(function(){
+    $(this).css("transform", "rotateZ(30deg)");
+});
+            $("#valve").mouseout(function(){
+    $(this).css("transform", "rotateZ(180deg)");
+});
+           
+           
+
+
+            $("#valve").css("transform", "rotate(180deg)");
+            
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Stylesheet link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicons -->
+    <title>Michail Skalistiris Pikis</title>
+</head>
+
+<body>
+    <!-- Valve Menu -->
+    <nav>
+        <a href="index.html"><img id="valve" src="img/Home/RValve.png" alt="Menu Button"></a>
+    </nav>
+    <!-- Tube & Droplets Menu -->
+    <div class="tubeD">
+        <!-- Drops-->
+        <!-- Myself Top Left -->
+    
+            <a id="dmyself" href="Myself.html">
+                <picture>
+                    <source srcset="img/Menu/Mobile/Dropsm/top.png" media="(min-height:100vw)">
+                    <source srcset="img/Menu/PC/Drops/TL.png"><img class="dropt" src="img/Menu/PC/Drops/TL.png" alt="TL drop"> </picture>
+            </a>
+            <!-- Skills Bottom Left -->
+            <a id="dskills" href="Skills.html">
+                <picture> <img class="dropsb" src="img/Menu/PC/Drops/BL.png" alt="TL drop"> </picture>
+            </a>
+            <!-- Work Top Right -->
+            <a id="dwork" href="Work.html">
+                <picture>
+                    <source srcset="img/Menu/Mobile/Dropsm/3.png" media="(min-height:100vw)">
+                    <source srcset="img/Menu/PC/Drops/TR.png"><img class="dropt2" src="img/Menu/PC/Drops/TL.png" alt="TL drop"> </picture>
+            </a>
+            <!-- Connect Bottom Right -->
+            <a id="dconnect" href="Connect.html">
+                <picture> <img class="dropsb" src="img/Menu/PC/Drops/BR.png" alt="TL drop"> </picture>
+            </a>
+  
+       <!-- Tube -->
+        <picture>
+            <source srcset="img/Home/Mobile/Tubem.png" media="(min-height:100vw)">
+            <source srcset="img/Home/PC/Tube.png"> <img id="tube" src="img/Home/PC/Tube.png" alt="Tube"> </picture>
+    </div>
+    <!-- Signature -->
+    <footer> <img id="signature" src="img/Home/Signature.png" alt="Signature">
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1312 @@
+/* Michail Skalistiris Pikis
+mss37
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+  ========================================
+  PC Variables
+  ========================================
+*/
+
+//Frame
+$bW: 3.7vh;
+$bottomBorder: 13vh;
+//Main menu
+$textS: 6vh;
+$dMPad: 0.8vw;
+//valve
+$valveSize: 11vh;
+$valveP: 5vmin;
+//arrow
+//signature
+$signatureH: 13vmin;
+$signatureWRatio: 4.4715;
+$signatureW: $signatureH*$signatureWRatio;
+//tube
+$tubeHeight: 79vh;
+$tubeDwidth: 1.17*$tubeHeight;
+$tubeDmwidth: 0.6215*$tubeHeight;
+//Droplets
+$dropShrink: 92%;
+$dropShrinkM: (100-$dropShrink)/2;
+//Colours
+$myRed: #962e18;
+$myBeige:#e3d3bf;
+//Fonts
+$myH1Font: Andale Mono;
+$dMenuFont: Digital;
+$h1S: 2.2em;
+$h2S: 1.2em;
+$pS: 1em;
+//MyPhoto
+$myPhotoW: 60.37vh;
+$myPhotoH: 1.08*$myPhotoW;
+//Fonts
+//Work Category Menu
+$wCBorder: 2px;
+//Connect
+$connectPad: 1.5vh;
+// Border
+$myBWidth: 2px;
+$myBRadius: 4px;
+//Padding
+$myPL: 4vmin;
+$myPM:3vmin;
+$myPS:2vmin;
+
+/*
+  ========================================
+  Mobile Variables
+  ========================================
+*/
+
+$bottomBorderM: 18vh;
+$textSM: 5vh;
+$connectPadM: 1vh;
+
+/*
+  ========================================
+  Fonts
+  ========================================
+*/
+
+@font-face {
+	font-family: "Digital";
+	src: url("../fonts/DS-DIGI.TTF");
+}
+
+@font-face {
+	font-family: "Andale";
+	src: url("../fonts/AndaleMono.ttf");
+}
+
+
+/*
+  ========================================
+  Initialize
+  ========================================
+*/
+
+button {
+	
+	outline: 0;
+	border-radius: 0;
+	
+	margin: 0;
+	border: none;
+	background-color: transparent;
+	font-size: $h2S;
+	font-family: "Andale";
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	color: $myRed;
+}
+
+button:focus {
+	outline: 0;
+}
+button:hover {
+	cursor: pointer;
+}
+// make scrollbar transparent 
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+	
+}
+iframe
+{
+	width: 100%;
+	height: 100%;;
+	
+}
+
+
+
+/*
+  ========================================
+  Main Body
+  ========================================
+*/
+
+body {
+	background: url("../img/Background.png") no-repeat center center fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+#frame {
+	position: fixed;
+	color: black;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border-style: solid;
+	border-width: $bW;
+	border-bottom-width: $bottomBorder;
+	border-radius: 200;
+	margin: 0;
+	padding: $myPM;
+	z-index: 0;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+@media screen and (min-height:100vw) {
+	#frame {
+		border-bottom-width: $bottomBorderM;
+	}
+}
+
+
+/*
+  ========================================
+  Text
+  ========================================
+*/
+
+h1,
+h2,h4,
+p {
+	font-family: "Andale";
+	color: black;
+}
+
+h1,
+h2 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: $h1S;
+}
+
+h2 {
+	font-size: $h2S;
+}
+h4
+{
+	font-size: 1em;
+	font-weight: bold;
+}
+
+p {
+	font-weight: 100;
+	font-size: $pS;
+	line-height: normal;
+}
+br
+{
+	height: $myPS;
+	line-height: $myPS;
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	h1 {
+		font-size: $h1S*0.85;
+	}
+	h2 {
+		font-size: $h2S*0.85;
+	}
+	p {
+		font-size: $pS*0.85;
+	}
+}
+
+
+
+
+/*
+  ========================================
+  Digital Menu
+  ========================================
+*/
+.dMenu {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border-style: solid;
+	border: 0;
+	margin: 0;
+	height: $bottomBorder;
+	padding: ($bottomBorder - $textS)*0.5 $bW;
+}
+
+.dMContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+//Home Button
+#back {
+	position: absolute;
+	left: 0%;
+	z-index: 3;
+}
+
+.mPages {
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+#line1 {
+	position: static;
+	float: left;
+	width: auto;
+	white-space: nowrap;
+	text-align: right;
+
+	z-index: 1;
+}
+
+.mHide {
+	
+	visibility: visible;
+	float: left;
+	text-align: center;
+	bottom: 0;
+	height: 100%;
+	left: 40vw;
+	right: 40vw;
+	z-index: 1;
+	padding: 0 $dMPad;
+}
+
+#line2 {
+	
+	float: left;
+	white-space: nowrap;
+	text-align: left;
+	z-index: 1;
+}
+
+.mPages li {
+	display: inline-block;
+	padding: 0 $dMPad;
+	margin: 0;
+}
+
+//[ ]
+#sym {
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	bottom: auto;
+	right: 0;
+	left: auto;
+	border: none;
+}
+
+#arrow {
+	visibility: hidden;
+	position: fixed;
+	bottom: 4.5vh;
+	right: 4.5vh;
+	height: 40px;
+	width: 40px;
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: transparent;
+	-webkit-text-stroke: 1.5px black;
+	z-index: 2;
+}
+
+#arrow img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+a,
+li,
+#sym,
+#back,
+.mHide {
+	font-size: $textS;
+	font-family: $dMenuFont;
+	color: $myBeige;
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	.dMenu {
+		height: $bottomBorderM;
+		padding-top: ($bottomBorderM - 2.5*$textSM)/2;
+		padding-bottom: ($bottomBorderM - 2.5*$textSM)/2;
+	}
+	.mHide {
+		visibility: hidden;
+		content: "\A";
+	}
+	.mHide:before {}
+	a,
+	li,
+	#sym,
+	#back {
+		font-size: $textSM;
+	}
+	#back {
+		left: 0;
+		top: 0;
+	}
+	#line1 {
+		position: absolute;
+		right: 3vh;
+		left: 10vh;
+		bottom: auto;
+		top: 0;
+		height: $textSM;
+	}
+	#line2 {
+		position: absolute;
+		right: 3vh;
+		left: 10vh;
+		bottom: 0;
+		height: $textSM;
+		text-align: right;
+		top: auto;
+	}
+	#sym {
+		position: absolute;
+		left: 0;
+		right: auto;
+		bottom: 0;
+		top: auto;
+	}
+	#arrow {
+		flow: right;
+	}
+}
+
+
+/*
+  ========================================
+  Signature
+  ========================================
+*/
+
+#signature {
+	position: absolute;
+	width: $signatureW;
+	height: $signatureH;
+	bottom: 6%;
+	right: 6%;
+}
+
+//Hide signature
+@media screen and (max-width: 152.82vh) and (min-width: 100vh) {
+	#signature {
+		visibility: hidden;
+	}
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	#signature {
+		left: 6.93%;
+		bottom: 2vh;
+		width: 40%;
+		height: auto;
+	}
+}
+
+
+/*
+  ========================================
+  Link functions
+  ========================================
+*/
+
+//Hover
+a:hover {
+	color: $myRed;
+	text-decoration: none;
+	.dropsb,
+	.dropt,
+	.dropt2 {
+		position: absolute;
+		left: $dropShrinkM;
+		width: $dropShrink;
+		height: $dropShrink;
+	}
+	.dropsb {
+		top: $dropShrinkM;
+	}
+}
+
+//active
+.active {
+	color: $myRed;
+}
+
+//Mobile
+@media screen and (min-height: 100vw) {
+	a:hover {
+		.dropt2 {
+			top: $dropShrinkM;
+		}
+	}
+}
+/*
+  ========================================
+  Homepage
+  ========================================
+*/
+
+// Valve Button
+#valve {
+	position: absolute;
+	//Size
+	max-width: 100%;
+	max-height: 100%;
+	width: $valveSize;
+	height: $valveSize;
+	min-width: 30px;
+	min-height: 30px;
+	//Margin
+	top: $valveP;
+	left: $valveP;
+	transition: 2s transform;
+}
+
+#valve:hover {
+	transform: rotate(150deg);
+}
+
+//Tube & Droplets
+.tubeD {
+	position: absolute;
+	height: $tubeHeight;
+	width: $tubeDwidth;
+	left: 12vw;
+	right: auto;
+	top: auto;
+	bottom: 0;
+}
+
+#tube {
+	position: absolute;
+	max-width: auto;
+	max-height: 100%;
+	left: 7.30%;
+	z-index: -1;
+}
+
+/*
+  ========================================
+  Menu page
+  ========================================
+*/
+
+
+
+//Droplets
+#dmyself {
+	position: absolute;
+	width: 14%;
+	height: 39.377%;
+	top: 15.3%;
+	left: 1.28%;
+}
+
+#dskills {
+	position: absolute;
+	width: 14.81%;
+	height: 18.34%;
+	bottom: 18.81%;
+	left: 0.045%;
+}
+
+#dwork {
+	position: absolute;
+	width: 14%;
+	height: 34.47%;
+	top: 11.60%;
+	right: 1.4%;
+}
+
+#dconnect {
+	position: absolute;
+	width: 14.81%;
+	height: 18.34%;
+	bottom: 26.56%;
+	right: 0.81%;
+}
+
+//drops
+.dropsb,
+.dropt,
+.dropt2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	.tubeD {
+		width: $tubeDmwidth;
+		right: 8.66%;
+		left: auto;
+	}
+	#tube {
+		right: 0;
+	}
+	#dmyself {
+		top: 10.5%;
+		left: -0.55%;
+		width: 19.29%;
+		height: 22.82%;
+	}
+	#dskills {
+		left: -1%;
+		top: 36.21%;
+		width: 21.23%;
+		height: 14.60%;
+	}
+	#dwork {
+		left: -1%;
+		top: 54.55%;
+		width: 21.23%;
+		height: 14.60%;
+	}
+	#dconnect {
+		left: -1%;
+		top: 73.22%;
+		width: 21.23%;
+		height: 14.60%;
+	}
+}
+
+
+/*
+  ========================================
+  Myself
+  ========================================
+*/
+
+//content container
+#contentM {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+#myPhoto {
+	position: absolute;
+	bottom: 2vh;
+	left: 3vh;
+	width: $myPhotoW;
+	height: $myPhotoH;
+}
+
+#name {
+	position: absolute;
+	top: 0;
+	left: 23vh;
+}
+#mText
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	left: 30vh;
+	top: 21%;
+	right: 25%;
+	bottom: 30%;
+	overflow: hidden;
+	
+}
+#h2m {
+	width:100%;
+	height: auto;
+	width: auto;
+	margin-bottom: $myPS;
+}
+
+#aboutM {
+	width:100%;
+	height: auto;
+	overflow-y: scroll;
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	#contentM {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		flex-shrink: 0;
+		flex-grow:0;
+		height: 100%;
+		width: 100%;
+		overflow-y: scroll;
+	}
+	#name {
+		
+		align-self: flex-start;
+		position: static;
+		text-align: right;
+		
+	}
+	#myPhoto {
+		order:2;
+		position: static;
+		margin: 2vh 0 2vh 0;
+		width: $myPhotoW*0.45;
+		height: $myPhotoH*0.45;
+	}
+	#mText
+	{
+		order:3;
+		position: static;
+		overflow: initial;
+	}
+	
+	#h2m {
+		
+		position: static;
+		margin-right: 5%;
+	}
+	#aboutM {
+		width: 100%;
+		height: auto;
+		overflow: initial;
+	}
+}
+
+
+/*
+  ========================================
+  Skills
+  ========================================
+*/
+
+#flex-container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow-y: scroll;
+}
+
+#softCont {
+	order: 1;
+	width: 100%;
+	height: auto;
+}
+
+#prLaCont {
+	order: 2;
+	width: 100%;
+	height: auto;
+}
+
+#hardCont {
+	order: 3;
+	width: 100%;
+	height: auto;
+}
+
+.sHead {
+	padding-bottom: $myPS;
+	font-size: auto;
+}
+
+.row {
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	max-width: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.sButton {
+	position: relative;
+	width: 16vh;
+	height: 16vh;
+	margin-right: 3vmin;
+	margin-bottom: 3vmin;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: none;
+}
+
+.sButton > img {
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+.sText {
+	position: absolute;
+	overflow: auto;
+	top: 60vh;
+	left: 50vh;
+	right: 15%;
+	bottom: 0;
+	text-align: left;
+}
+
+//mobile
+@media screen and (min-height: 75vw) {
+	
+	#flex-container {
+		height: 100%;
+		justify-content: flex-start;
+		overflow: scroll;
+		
+	}
+	.sButton {
+		width: 10vh;
+		height: 10vh;
+	}
+	.sText {
+		margin: 2vh 0 0 0;
+		position: static;
+		flex: 0 0 0 50%;
+		order: 4;
+		overflow: initial;
+		
+	}
+}
+
+
+
+/*
+  ========================================
+  Work
+  ========================================
+*/
+
+// Main container
+#contentW {
+	position: relative;
+	display: flex;
+	flex-shrink: 0;
+	flex-grow: 0;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	overflow: initial;
+}
+
+// Head
+#wHead {
+	order: 1;
+	margin-top:0;
+	margin-bottom: $myPM;
+}
+
+// Projects
+#projects {
+	order: 2;
+	margin-bottom: $myPS;
+}
+
+#projects > div {
+	width: auto;
+	height: auto;
+	min-height: 70px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.wPButton {
+	background-color: transparent;
+	padding: 0.6*$h2S;
+	height: 100%;
+	width: auto;
+	color:black;
+	margin-right: $myPS;
+	border-bottom: $myBWidth solid black;
+	border-radius: $myBRadius;
+}
+
+.wPButton:hover {
+	color: $myRed;
+}
+
+.wPActive
+{
+	color: $myRed;
+}
+
+// Details Area
+#mainInfo {
+	order: 3;
+	border: none;
+	width: 70%;
+	overflow: scroll;
+	
+	
+}
+
+.wColumn {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.wText {
+	margin-bottom: $myPS;
+}
+
+.wRow {
+	display: flex;
+	border: 2px transparent;
+	border-radius: 4px;
+	flex-direction: row;
+	width: auto;
+	height: auto;
+	flex-wrap: wrap;
+	line-height: 0;
+	margin: 0 (-$myPS/2);
+	
+}
+.wFull
+{
+	height: 50vh;
+	margin-bottom: $myPS/2;
+}
+
+.thumbnail {
+	padding: $myPS/2;
+}
+
+.thumbnail img {
+	width: 100%;
+	height: auto;
+}
+
+.thumbnail video {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+
+
+// Category Menu
+#wMenu {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	top: 0;
+	right: 0;
+	vertical-align: middle;
+}
+
+#photoB {
+	order: 1;
+	border-left: $myBWidth solid black;
+	border-right: $myBWidth solid black;
+	border-top: $myBWidth solid black;
+	border-bottom: none;
+}
+
+#dCompB {
+	order: 2;
+	margin-top: 11.9vh;
+	margin-left: -$myBWidth;
+	border-bottom: $myBWidth solid black;
+	border-right: $myBWidth solid black;
+	border-left: $myBWidth solid black;
+	border-top: none;
+}
+
+#cineB {
+	order: 3;
+	margin-left: -$myBWidth;
+	border-left: $myBWidth solid black;
+	border-right: $myBWidth solid black;
+	border-top: $myBWidth solid black;
+	border-bottom: none;
+}
+
+#gamesB {
+	order: 4;
+	margin-top: 11.9vh;
+	margin-left: -$myBWidth;
+	border-left: $myBWidth solid black;
+	border-right: $myBWidth solid black;
+	border-bottom: $myBWidth solid black;
+	border-top: none;
+}
+
+.wButton {
+	width: 12vh;
+	height: 12vh;
+	border-radius: 0px;
+	padding: $myPS;
+	background: none;
+}
+
+#photoB:hover,
+#cineB:hover,
+#dCompB:hover,
+#gamesB:hover,
+#photoB.wActive,
+#cineB.wActive,
+#dCompB.wActive,
+#gamesB.wActive {
+	border-color: $myRed;
+}
+
+.wButton > img {
+	height: auto;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+@media screen and (min-height: 62.7vw) {
+	#photoB,
+	#dCompB,
+	#cineB,
+	#gamesB {
+		margin: 0;
+		margin-left: 2vh;
+	}
+	#wMenu {
+		justify-content: space-between;
+		text-align: center;
+	}
+	.wButton {
+		width: 9vh;
+		height: 9vh;
+		padding: 2vh;
+	}
+
+
+//mobile
+@media screen and (min-height: 100vw) {
+	#contentW {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		overflow: scroll;
+	}
+	#wMenu {
+		position: static;
+		order: 1;
+		width: 100%;
+		min-height: 9vh;
+		
+		
+	}
+	#photoB,
+	#dCompB,
+	#cineB,
+	#gamesB {
+		margin: 0;
+	}
+	#wHead {
+		position: static;
+		order: 2;
+		margin-top: $myPM;
+	}
+	#projects {
+		order: 3;
+	}
+	.wPButton {}
+	#mainInfo {
+		width: 100%;
+		order: 4;
+		overflow: initial;
+	}
+	
+}
+}
+
+/*
+  ========================================
+  Connect
+  ========================================
+*/
+
+#contForm {
+	position: relative;
+	padding-right: 30%;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+
+/* Style inputs, select elements and textareas */
+
+#contForm input[type=text],
+#contForm select,
+#contForm textarea {
+	background-color: transparent;
+	width: 100%;
+	border: $myBWidth solid black;
+	border-radius: $myBRadius;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: none;
+	font-family: "Andale";
+}
+
+
+/* Style the label to display next to the inputs */
+
+#contForm label {
+	width: 70%;
+	display: inline-block;
+	font-family: "Andale";
+}
+
+#contForm input[type=text],
+#contForm select,
+#contForm textarea,
+#contForm label,
+input[type=submit] {
+	padding: $connectPad 0 $connectPad 0;
+}
+
+.cButtons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+input[type=submit] {
+	order: 2;
+	background-color: transparent;
+	width: 18vh;
+	height: 6vh;
+	padding: 0.6*$h2S;
+	border: $myBWidth solid black;
+	border-radius: 4px;
+	font-family: "Andale";
+	font-weight: bold;
+	text-align: center;
+	color: $myRed;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	background-color: black;
+}
+
+// Social Media Icons
+#sMIcons {
+	order: 1;
+	padding: 0px;
+}
+
+#sMIcons img {
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 6vh;
+	height: 6vh;
+}
+
+//mobile
+@media screen and (min-height: 100vw) {
+	#contForm {
+		padding: 0;
+	}
+	.cButtons {
+		flex-direction: column;
+	}
+	input[type=submit] {
+		width: 100%;
+	}
+	#sMIcons {
+		order: 3;
+		padding: $connectPad;
+		text-align: center;
+	}
+	#contForm input[type=text],
+	#contForm select,
+	#contForm textarea,
+	#contForm label,
+	input[type=submit] {
+		padding: $connectPadM 0 $connectPadM 0;
+	}
+}
+
+
+/*
+  ========================================
+  Functions
+  ========================================
+*/
+
+//rotate 180
+.rotate180 {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Stylesheet link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery link -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/MenuFunctions.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#sym").click(function () {
+                $(".dMenu").css("bottom", "-16vh");
+                $("#frame").css("border-bottom-width", "3.7vmin");
+            });
+        });
+    </script>
+    <!-- Favicons -->
+    <link rel="icon" href="img/favicon.ico">
+    <title>Michail Skalistiris Pikis</title>
+</head>
+
+<body>
+    <div id="frame">
+        <div id="contForm">
+            <form action="mailto:admin@mspikis.com" method="post" enctype="text/plain">
+                <div>
+                    <label for="fName">Full Name:</label>
+                    <input type="text" id="fName" name="Name" placeholder=" Forename & Surname.. " required> </div>
+                <div>
+                    <label for="email">E-mail Adress:</label>
+                    <input type="text" id="email" name="E-mail" placeholder=" E-mail.." required> </div>
+                <div>
+                    <label for="subject">Content:</label>
+                    <textarea id="subject" name="Message" placeholder=" Your thoughts.." style="height:200px" required></textarea>
+                </div>
+                <div>
+                    <div class="cButtons">
+                        <input type="submit" value="Send">
+                        <div id="sMIcons">
+                            <a href="https://www.facebook.com/michael.sk.pi"><img src="img/Connect/fbIcon.png" alt="Facebook Icon"></a>
+                            <a href="https://www.instagram.com/mike_sk.p/"><img src="img/Connect/instaIcon.png" alt="Instagram Icon"></a>
+                            <a href="https://www.linkedin.com/in/michail-skalistiris-pikis-367333107/"><img src="img/Connect/linkedInIcon.png" alt="Linked In Icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button id="arrow">⥣</button>
+        </div>
+    </div>
+    <div class="dMenu">
+        <div class="dMContainer"> <a id="back" href="index.html">←</a>
+            <div class="mPages">
+                <ul id="line1">
+                    <li><a href="Myself.html">MySelf</a></li><li>
+                        <h3>|</h3> </li><li><a href="Skills.html">Skills<br></a></li>
+                </ul>
+                <h3 class="mHide">|</h3>
+                <ul id="line2">
+                    <li><a href="Work.html">Work</a></li><li>
+                        <h3>|</h3> </li><li><a class="active" href="Connect.html">Connect</a></li>
+                </ul>
+            </div>
+            <button id="sym">[ ]</button>
+        </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+</html>
